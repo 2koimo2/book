@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>진정한 — 나만의 책만들기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 로딩 화면 -->
+  <div class="loading" id="loading">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">책을 펼치는 중…</p>
+  </div>
+
+  <!-- 차례 버튼 -->
+  <button class="toc-btn" id="tocBtn" title="차례 열기">
+    <span class="toc-icon">☰</span>
+    <span class="toc-label">차례</span>
+  </button>
+
+  <!-- 차례 모달 -->
+  <div class="toc-modal" id="tocModal" role="dialog" aria-modal="true" aria-label="차례">
+    <div class="toc-panel">
+      <button class="toc-close" id="tocClose" aria-label="닫기">✕</button>
+      <h2 class="toc-title">차 &nbsp; 례</h2>
+      <div class="toc-list" id="tocList"></div>
+    </div>
+  </div>
+
+  <!-- 본문 -->
+  <main class="book-wrapper">
+    <header class="book-header">
+      <h1 class="book-title">진 정 한</h1>
+      <p class="book-subtitle">나만의 책만들기</p>
+    </header>
+
+    <div class="stage">
+      <div id="flipbook"></div>
+    </div>
+
+    <nav class="controls" aria-label="페이지 탐색">
+      <button class="ctrl-btn" id="prevBtn" aria-label="이전 페이지">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M10 3L5 8l5 5V3z"/>
+        </svg>
+        이전
+      </button>
+      <span class="page-info" id="pageInfo">1 / 84</span>
+      <button class="ctrl-btn" id="nextBtn" aria-label="다음 페이지">
+        다음
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M6 3l5 5-5 5V3z"/>
+        </svg>
+      </button>
+    </nav>
+
+    <p class="hint">← → 키 또는 버튼으로 넘기기 &nbsp;·&nbsp; 모서리를 드래그해도 됩니다</p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
