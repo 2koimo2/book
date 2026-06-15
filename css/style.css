@@ -136,7 +136,8 @@ body {
 /* ─── Stage (flipbook area) ──────────────────────────────────────────────── */
 .stage {
   position: relative;
-  /* shadow beneath the book */
+  flex-shrink: 0;
+  overflow: hidden;
   filter: drop-shadow(0 24px 48px rgba(100,80,60,.25));
 }
 

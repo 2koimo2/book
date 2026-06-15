@@ -65,6 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 책 크기 */
   const { w, h } = calcBookSize();
+  const isPortrait = window.innerWidth < 700;
+
+  /* stage 크기를 고정해서 페이지 넘길 때 흔들림 방지 */
+  const stageEl = document.querySelector('.stage');
+  const spreadW = isPortrait ? w : w * 2;
+  stageEl.style.width  = `${spreadW}px`;
+  stageEl.style.height = `${h}px`;
 
   /* StPageFlip 초기화 */
   const pageFlip = new St.PageFlip(flipbookEl, {
@@ -73,9 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
     size:              'fixed',
     drawShadow:        true,
     flippingTime:      700,
-    usePortrait:       window.innerWidth < 700,
+    usePortrait:       isPortrait,
     startZIndex:       0,
-    autoSize:          true,
+    autoSize:          false,
     maxShadowOpacity:  0.6,
     showCover:         true,
     mobileScrollSupport: false,
@@ -142,6 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       const { w: nw, h: nh } = calcBookSize();
+      const portrait = window.innerWidth < 700;
+      const sw = portrait ? nw : nw * 2;
+      stageEl.style.width  = `${sw}px`;
+      stageEl.style.height = `${nh}px`;
       pageFlip.updateSettings({ width: nw, height: nh });
       pageFlip.update();
     }, 200);
