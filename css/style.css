@@ -183,9 +183,15 @@ body {
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
-@media (max-width: 480px) {
-  .book-title { font-size: 1.1rem; }
+@media (max-width: 700px) {
+  .book-wrapper { gap: 20px; padding: 16px 0 32px; }
+  .book-area    { gap: 8px; }
   .toc-btn .toc-label { display: none; }
-  .ctrl-btn { padding: 9px 14px; font-size: .82rem; }
-  .hint { text-align: center; font-size: .65rem; }
+  .toc-btn { top: 12px; left: 12px; padding: 8px 10px; }
+}
+
+/* 터치 기기: 호버 없으므로 버튼 항상 표시 */
+@media (hover: none) {
+  .nav-btn:not(:disabled) { opacity: 1; }
+  .nav-btn svg { width: 32px; height: 32px; }
 }

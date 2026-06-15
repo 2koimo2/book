@@ -25,8 +25,9 @@ function calcBookSize() {
   const PAGE_RATIO = 1182 / 886; // height / width
 
   if (isPortrait) {
-    // 모바일: 한 페이지
-    const w = Math.min(vw * 0.88, 380);
+    // 모바일: 양쪽 버튼(32px) + 갭(8px) × 2 + 여백 확보
+    const reserved = (32 + 8) * 2 + 16;
+    const w = Math.min(vw - reserved, 380);
     return { w, h: Math.round(w * PAGE_RATIO) };
   } else {
     // 데스크탑: 두 페이지 펼침
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     autoSize:          false,
     maxShadowOpacity:  0.6,
     showCover:         true,
-    mobileScrollSupport: false,
+    mobileScrollSupport: true,
     swipeDistance:     30,
     clickEventForward: true,
   });
