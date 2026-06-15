@@ -3,12 +3,12 @@
 
 /* ─── Base ───────────────────────────────────────────────────────────────── */
 :root {
-  --gold:    #c9a96e;
-  --gold-dim: rgba(201,169,110,.35);
-  --bg:      #111318;
-  --bg2:     #181c25;
-  --text:    #ddd;
-  --muted:   #666;
+  --gold:    #8b6f47;
+  --gold-dim: rgba(139,111,71,.3);
+  --bg:      #f5f0e8;
+  --bg2:     #ede8de;
+  --text:    #3a3028;
+  --muted:   #9a8f82;
   --radius:  6px;
   --trans:   .25s ease;
 }
@@ -52,20 +52,20 @@ body {
 .toc-btn {
   position: fixed; top: 20px; left: 20px; z-index: 500;
   display: flex; align-items: center; gap: 6px;
-  background: rgba(255,255,255,.04);
+  background: rgba(0,0,0,.04);
   border: 1px solid var(--gold-dim);
   color: var(--gold);
   padding: 8px 14px; border-radius: var(--radius);
   font-family: inherit; font-size: .82rem; letter-spacing: .08em;
   cursor: pointer; transition: background var(--trans);
 }
-.toc-btn:hover { background: rgba(201,169,110,.12); }
+.toc-btn:hover { background: rgba(139,111,71,.12); }
 .toc-icon { font-size: 1rem; }
 
 /* ─── TOC Modal ──────────────────────────────────────────────────────────── */
 .toc-modal {
   position: fixed; inset: 0; z-index: 800;
-  background: rgba(0,0,0,.75);
+  background: rgba(80,60,40,.5);
   display: flex; align-items: center; justify-content: flex-start;
   opacity: 0; pointer-events: none;
   transition: opacity var(--trans);
@@ -103,7 +103,7 @@ body {
 .toc-item {
   display: flex; justify-content: space-between; align-items: baseline;
   padding: 12px 8px;
-  border-bottom: 1px solid rgba(255,255,255,.05);
+  border-bottom: 1px solid rgba(0,0,0,.07);
   cursor: pointer; font-size: .9rem;
   color: var(--text); letter-spacing: .03em;
   transition: color var(--trans), background var(--trans);
@@ -137,7 +137,7 @@ body {
 .stage {
   position: relative;
   /* shadow beneath the book */
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,.8));
+  filter: drop-shadow(0 24px 48px rgba(100,80,60,.25));
 }
 
 /* StPageFlip injects its canvas/div here; ensure white background for pages */
@@ -153,14 +153,14 @@ body {
 
 .ctrl-btn {
   display: flex; align-items: center; gap: 6px;
-  background: rgba(255,255,255,.04);
+  background: rgba(0,0,0,.04);
   border: 1px solid var(--gold-dim);
   color: var(--gold);
   padding: 10px 20px; border-radius: var(--radius);
   font-family: inherit; font-size: .88rem; letter-spacing: .06em;
   cursor: pointer; transition: background var(--trans), opacity var(--trans);
 }
-.ctrl-btn:hover { background: rgba(201,169,110,.12); }
+.ctrl-btn:hover { background: rgba(139,111,71,.12); }
 .ctrl-btn:disabled { opacity: .25; cursor: not-allowed; pointer-events: none; }
 
 .page-info {
