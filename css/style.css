@@ -156,7 +156,7 @@ body {
   background: rgba(0,0,0,.04);
   border: 1px solid var(--gold-dim);
   color: var(--gold);
-  padding: 10px 20px; border-radius: var(--radius);
+  padding: 8px; border-radius: 50%;
   font-family: inherit; font-size: .88rem; letter-spacing: .06em;
   cursor: pointer; transition: background var(--trans), opacity var(--trans);
 }
