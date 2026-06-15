@@ -1,19 +1,19 @@
 /* ─── 상수 ───────────────────────────────────────────────────────────────── */
-const TOTAL_PAGES = 84;
+const TOTAL_PAGES = 166;
 
 const TOC = [
-  { title: '표지',         page: 1  },
-  { title: '프롤로그',     page: 9  },
-  { title: '사진과 글',   page: 15 },
-  { title: '작품과 글',   page: 37 },
-  { title: '글 다시 쓰기', page: 47 },
-  { title: '하루 글쓰기', page: 57 },
-  { title: '에필로그',     page: 81 },
+  { title: '표지',         page: 1   },
+  { title: '프롤로그',     page: 9   },
+  { title: '사진과 글',   page: 15  },
+  { title: '작품과 글',   page: 37  },
+  { title: '글 다시 쓰기', page: 47  },
+  { title: '하루 글쓰기', page: 57  },
+  { title: '에필로그',     page: 161 },
 ];
 
 /* ─── 페이지 파일명 생성 ──────────────────────────────────────────────────── */
 function pageFile(n) {
-  return `images/page-${String(n).padStart(2, '0')}.jpg`;
+  return `images/page-${String(n).padStart(3, '0')}.jpg`;
 }
 
 /* ─── 책 크기 계산 (뷰포트 기준) ─────────────────────────────────────────── */
@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const img = document.createElement('img');
     img.src = pageFile(i);
     img.alt = `${i}페이지`;
-    // 첫 10페이지만 즉시 로드, 나머지 지연 로드
-    if (i > 10) img.loading = 'lazy';
+    // 첫 12페이지만 즉시 로드, 나머지 지연 로드
+    if (i > 12) img.loading = 'lazy';
     div.appendChild(img);
     flipbookEl.appendChild(div);
   }
