@@ -146,22 +146,29 @@ body {
   object-fit: cover; display: block;
 }
 
-/* ─── Controls ───────────────────────────────────────────────────────────── */
-.controls {
+/* ─── Book area (stage + side buttons) ──────────────────────────────────── */
+.book-area {
   display: flex; align-items: center; gap: 20px;
 }
 
-.ctrl-btn {
-  display: flex; align-items: center; gap: 6px;
-  background: rgba(0,0,0,.04);
-  border: 1px solid var(--gold-dim);
+/* ─── Nav buttons (hover to reveal) ─────────────────────────────────────── */
+.nav-btn {
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none;
   color: var(--gold);
-  padding: 8px; border-radius: 50%;
-  font-family: inherit; font-size: .88rem; letter-spacing: .06em;
-  cursor: pointer; transition: background var(--trans), opacity var(--trans);
+  padding: 4px; border-radius: 50%;
+  cursor: pointer; flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--trans), transform var(--trans);
 }
-.ctrl-btn:hover { background: rgba(139,111,71,.12); }
-.ctrl-btn:disabled { opacity: .25; cursor: not-allowed; pointer-events: none; }
+.nav-btn:hover { transform: scale(1.12); }
+.nav-btn:disabled { opacity: 0 !important; cursor: not-allowed; pointer-events: none; }
+.book-area:hover .nav-btn:not(:disabled) { opacity: 1; }
+
+/* ─── Controls ───────────────────────────────────────────────────────────── */
+.controls {
+  display: flex; align-items: center; justify-content: center;
+}
 
 .page-info {
   font-size: .82rem; color: var(--muted);

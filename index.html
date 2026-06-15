@@ -33,19 +33,23 @@
 
   <!-- 본문 -->
   <main class="book-wrapper">
-    <div class="stage">
-      <div id="flipbook"></div>
+    <div class="book-area">
+      <button class="nav-btn" id="prevBtn" aria-label="이전 페이지">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="transform:scaleX(-1)"><circle cx="12" cy="12" r="10"/><path d="m10 8 4 4-4 4"/></svg>
+      </button>
+
+      <div class="stage">
+        <div id="flipbook"></div>
+      </div>
+
+      <button class="nav-btn" id="nextBtn" aria-label="다음 페이지">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 4 4-4 4"/></svg>
+      </button>
     </div>
 
-    <nav class="controls" aria-label="페이지 탐색">
-      <button class="ctrl-btn" id="prevBtn" aria-label="이전 페이지">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform:scaleX(-1)"><circle cx="12" cy="12" r="10"/><path d="m10 8 4 4-4 4"/></svg>
-      </button>
+    <div class="controls">
       <span class="page-info" id="pageInfo">1 / 166</span>
-      <button class="ctrl-btn" id="nextBtn" aria-label="다음 페이지">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 4 4-4 4"/></svg>
-      </button>
-    </nav>
+    </div>
 
     <p class="hint">← → 키 또는 버튼으로 넘기기 &nbsp;·&nbsp; 모서리를 드래그해도 됩니다</p>
   </main>
